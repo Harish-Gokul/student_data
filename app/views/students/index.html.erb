@@ -20,7 +20,7 @@
 
       <td><button class="btn btn-outline-success"><%= link_to "Show",student_path(student) ,{style: "text-decoration: none;color: inherit"} %></button></td>
       <td><button class="btn btn-outline-waring"><%= link_to "Edit",edit_student_path(student) ,{style: "text-decoration: none;color: inherit"} %></button></td>
-      <td><button class="btn btn-outline-danger"><%= link_to "Delete",student_path(student),{style: "text-decoration: none;color: inherit"} %></button></td>
+      <td><button class="btn btn-outline-danger"><%= link_to "Delete",student_path(student),{style: "text-decoration: none;color: inherit", method: :delete} %></button></td>
     </tr>
       <%end %>
 
