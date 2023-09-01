@@ -1,5 +1,6 @@
 <div class="div-center">
 
+
   <h2>Edit student</h2>
   <% if @student.errors.full_messages.any? %>
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -42,7 +43,7 @@
       <div class="form-group row">
         <%= form.label :year_of_passing, {class: "col-sm-2 col-form-label"} %>
         <div class="col-sm-10">
-          <%= form.text_field :year_of_passing , {class: "form-control"} %>
+           <%= form.text_field :year_of_passing , {class: "form-control"} %>
         </div>
       </div>
 

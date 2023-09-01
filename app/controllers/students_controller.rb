@@ -16,7 +16,14 @@ class StudentsController < ApplicationController
     end
 
     def show
-      @student = Student.find(params[:id])
+      byebug
+      @eachStudent = Student.find(params[:id])
+      puts @student
     end
   end
+
+  # def edit
+  #   @student = Student.find(params[:id])
+  # end
+
 end
