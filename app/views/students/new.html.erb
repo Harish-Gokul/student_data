@@ -1,0 +1,64 @@
+<div class="div-center">
+
+
+<h2>Create student</h2>
+<% if @student.errors.full_messages.any? %>
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <h4 class="alert-heading">Some issue in saving your data</h4>
+    <% for i in @student.errors.full_messages %>
+      <li><%= i %></li>
+    <%end %>
+  </div>
+  <%end %>
+
+
+
+  <div class="student_input_container">
+  <%= form_with scope: :student,url: students_path, method: :post do |form| %>
+
+    <div class="form-group row">
+      <%= form.label :first_name, {class: "col-sm-2 col-form-label"} %>
+      <div class="col-sm-10">
+        <%= form.text_field :first_name , {class: "form-control"} %>
+      </div>
+    </div>
+
+      <div class="form-group row">
+        <%= form.label :last_name, {class: "col-sm-2 col-form-label"} %>
+        <div class="col-sm-10">
+          <%= form.text_field :last_name , {class: "form-control"} %>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <%= form.label :email, {class: "col-sm-2 col-form-label"} %>
+        <div class="col-sm-10">
+          <%= form.text_field :email , {class: "form-control"} %>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <%= form.label :year_of_passing, {class: "col-sm-2 col-form-label"} %>
+        <div class="col-sm-10">
+          <input type="number" name="student[year_of_passing]" class="form-control" id="student_year_of_passing">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <%= form.label :rank, {class: "col-sm-2 col-form-label"} %>
+        <div class="col-sm-10">
+          <input type="number" name="student[rank]" class="form-control" id="student_rank">
+        </div>
+      </div>
+
+      <%= form.submit %>
+
+  <% end %>
+  </div>
+
+  <button class="btn btn-outline-info"><%= link_to "Back", students_path ,{style: "text-decoration: none;color: inherit"} %> </button>
+
+</div>

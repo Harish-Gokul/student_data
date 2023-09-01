@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+body{
+    font-family: 'Roboto Mono', monospace;
+}
+
+.div-center{
+    text-align: center;
+}
+
+.student_input_container{
+    margin: 0% 10%;
+    padding: 2% 10%;
+    border: 1px solid black;
+    border-radius: 5px;
+    background: rgba(119, 136, 153, 0.21);
+}

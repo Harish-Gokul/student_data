@@ -1,0 +1,53 @@
+<div class="div-center">
+  <h2>Showing <%= @student.first_name %> Details</h2>
+  <br>
+  <div style="margin: 0% 10%; border: 5px solid black; border-radius: 5px">
+  <table class="table table-striped table-bordered" style="margin:0%" >
+    <tbody>
+    <tr>
+      <th>First Name</th>
+      <td><%= @student.first_name %></td>
+    </tr>
+    <tr>
+      <th>Last Name</th>
+      <td><%= @student.last_name %></td>
+    </tr>
+
+    <tr>
+      <th>Email Id</th>
+      <td><%= @student.email %></td>
+    </tr>
+
+    <tr>
+      <th>Year of Passing</th>
+      <td><%= @student.year_of_passing %></td>
+    </tr>
+
+    <tr>
+      <th>Rank</th>
+      <td><%= @student.rank %></td>
+    </tr>
+
+    <tr>
+      <th>Active</th>
+      <%if @student.active %>
+        <td class="bg-success">Yes</td>
+      <%else %>
+        <td class="bg-danger">No</td>
+      <%end %>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+  <br>
+  <div style="display: flex; justify-content: center;  " >
+    <div>
+    <button class="btn btn-outline-warning"> <%= link_to "Edit" , student_path(@student),{style: "text-decoration: none;color: inherit"} %></button>
+    </div>
+    <div>
+    <button class="btn btn-outline-success"> <%= link_to "Back" , students_path,{style: "text-decoration: none;color: inherit"} %></button>
+    </div>
+  </div>
+
+
+</div>
