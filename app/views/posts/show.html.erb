@@ -1,0 +1,21 @@
+<div class="show_post_container div-center">
+  <div class="card" style="width: 35rem;">
+    <div class="card-header bg-dark text-white">
+      <h5 class="card-title"><%= @post.title %></h5>
+    </div>
+    <div class="card-body">
+      <p class="card-text"><%= @post.description %>></p>
+    </div>
+    <div class="card-footer ">
+      <h5 class="card-text"> <small class="text-muted">Created at <%= @post.created_at.strftime("%F") %> </small></h5>
+    </div>
+  </div>
+</div>
+
+<div class="div-center">
+  <button class="btn btn-outline-warning"><%= link_to "Edit",edit_student_post_path(@post.student.id,@post.id) ,{style: "text-decoration: none;color: inherit"} %></button>
+  <button class="btn btn-outline-danger"><%= link_to "Delete",student_post_path(@post.student.id,@post.id),{style: "text-decoration: none;color: inherit", method: :delete} %></button>
+  <button class="btn btn-outline-success"> <%= link_to "Back" , student_posts_path,{style: "text-decoration: none;color: inherit"} %></button>
+
+</div>
+

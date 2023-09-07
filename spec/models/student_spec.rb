@@ -48,6 +48,5 @@ RSpec.describe Student, type: :model do
         expect(student.save).to eq(false)
       end
     end
-
   end
 end

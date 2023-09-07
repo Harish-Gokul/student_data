@@ -1,0 +1,29 @@
+<div class="div-center" style="padding: 10px">
+  <h3>Listing all post from<span class="text-info"> <%= @student.first_name%></span></h3>
+<!--  <button class="btn btn-outline-success"> <%#= link_to "Back to Student page" , students_path,{style: "text-decoration: none;color: inherit"} %></button>-->
+  <button class="btn btn-outline-success"> <%= link_to "Create Post" , new_student_post_path,{style: "text-decoration: none;color: inherit"} %></button>
+</div>
+
+<div class="wrap_cards">
+    <div class="cards_container">
+
+      <%@posts.each do |post| %>
+        <div class="card" style="width: 35rem;">
+          <div class="card-header bg-dark text-white">
+            <h5 class="card-title"><%=post.title %></h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text"><%= post.description %></p>
+          </div>
+          <div class="card-footer bg-dark text-white">
+            <button class="btn btn-success"> <%= link_to "Show" , student_post_path(post.student_id,post.id),{style: "text-decoration: none;color: inherit"} %></button>
+            <button class="btn btn-warning"> <%= link_to "Edit" , edit_student_post_path(post.student.id,post.id),{style: "text-decoration: none;color: inherit"} %></button>
+            <button class="btn btn-danger"><%= link_to "Delete",student_post_path(post.student.id,post.id),{style: "text-decoration: none;color: inherit", method: :delete} %></button>
+          </div>
+        </div>
+
+      <%end %>
+    </div>
+
+
+</div>
