@@ -3,7 +3,6 @@ class StudentsController < ApplicationController
     @students = Student.all
   end
   def new
-
     @student = Student.new
   end
   def create
@@ -14,11 +13,11 @@ class StudentsController < ApplicationController
     else
       render "new"
     end
-
+  end
     def show
       @student = Student.find(params[:id])
     end
-  end
+
 
   def edit
     @student = Student.find(params[:id])
